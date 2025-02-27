@@ -1,0 +1,43 @@
+service: serverless-crud-pg
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  environment:
+    PG_HOST: localhost
+    PG_USER: postgres
+    PG_PASSWORD: admin
+    PG_DATABASE: serverless_db
+    PG_PORT: 5432
+
+plugins:
+  - serverless-offline
+
+functions:
+  createCinema:
+    handler: handler.createCinema
+    events:
+      - http:
+          path: cinemas
+          method: post
+
+  purchaseSeat:
+    handler: handler.purchaseSeat
+    events:
+      - http:
+          path: cinemas/{cinemaId}/{seatNumber}
+          method: put
+
+  purchaseConsecutiveSeats :
+    handler: handler.purchaseConsecutiveSeats 
+    events:
+      - http:
+          path: cinemas/{cinemaId}/two_free_consecutive
+          method: put
+
+  # deleteUser:
+  #   handler: handler.deleteUser
+  #   events:
+  #     - http:
+  #         path: users/{id}
+  #         method: delete
