@@ -30,6 +30,9 @@ npm install
 npm run dev
 ```
 
+## To run all migrations
+npx knex migrate:latest
+
 ## I have implemented the Logic as per the attached image cinema.jpg
 To Start the serverless at locallay run the *serverless offline* command
 ## API for creating the Cinema
