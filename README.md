@@ -31,9 +31,9 @@ npm run dev
 ```
 
 ## I have implemented the Logic as per the attached image cinema.jpg
-
+To Start the serverless at locallay run the *serverless offline* command
 ## API for creating the Cinema
-- End Points /api/cinema
+- End Points [/api/cinema](http://localhost:3000/dev/cinemas)
 - Req Body: 
 {
     "cinemaName": "IJKL",
@@ -47,9 +47,9 @@ Res:
 -Returns the status code 201 and cinemaId as response  
 
 ## Api for Booking seat
-- End Point: /api/cinemas/:cinemaId/seats/:seatNumber
+- End Point: [/api/cinemas/:cinemaId/seats/:seatNumber](http://localhost:3000/dev/cinemas/:cinemaId/:seatNumber)
 - Returns: Success code 201 and selected row values as response
 
 ## Api for Purchase the first two consecutive available seats
-- End Point: /api/cinemas/:cinemaId/two_free_consecutive
+- End Point: [/api/cinemas/:cinemaId/two_free_consecutive](http://localhost:3000/dev/cinemas/{cinemaId}/two_free_consecutive)
 - Returns: Success code 201 and Row no and seat no
